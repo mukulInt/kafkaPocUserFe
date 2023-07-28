@@ -50,7 +50,12 @@ import useApiRequest from '../../util/customhook/UseApiRequest';
 // }
 const LinkItems = [
   { name: 'Home', icon: FiHome ,href:"/home"},
-  { name: 'Blog', icon: ArticleOutlinedIcon,href:"/blog" },
+// <<<<<<< HEAD
+//   { name: 'Blog', icon: ArticleOutlinedIcon,href:"/blog" },
+// =======
+  { name: 'User', icon: FiTrendingUp,href:"/user"},
+  { name: 'Blog', icon: FiCompass,href:"/blogs" },
+// >>>>>>> 33c8155 (motre)
   { name: 'Favourites', icon: FiStar },
 ];
 

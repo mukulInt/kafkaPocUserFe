@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import SidebarWithHeader from "./component/sidebar/SidebarWithHeader";
@@ -12,6 +13,22 @@ import UserListing from "./component/user/UserListing.jsx";
 import BlogViewActivity from "./component/blog/BlogViewActivity";
 import Login from "./component/login/Login";
 import PrivateRoute from "./PrivateRoute";
+=======
+
+import './App.css';
+import SidebarWithHeader from './component/sidebar/SidebarWithHeader';
+import { ChakraProvider, CSSReset } from '@chakra-ui/react';
+import {Routes,Route} from "react-router-dom";
+import Home from './component/home/Home.jsx';
+// import Blog from './component/blog/Blog';
+import BlogListing from './component/blog/BlogListing';
+
+import UserDetails from "./component/user/UserDetails";
+import UserListing from "./component/user/UserListing.jsx";
+import BlogViewActivity from './component/blog/BlogViewActivity';
+
+
+>>>>>>> 33c8155 (motre)
 
 function App() {
   // const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -30,6 +47,7 @@ function App() {
 
   return (
     <ChakraProvider>
+<<<<<<< HEAD
       <div className="App">
         <CSSReset />
         {/* <h1>hey its woking</h1> */}
@@ -51,6 +69,21 @@ function App() {
             />
 
             <Route path="/user-details/:id" element={<UserDetails />} />
+=======
+    <div className="App">
+    <CSSReset />
+      {/* <h1>hey its woking</h1> */}
+      {/* <NavBar></NavBar> */}
+      {/* <Nav></Nav> */}
+      <SidebarWithHeader>
+        <Routes>
+          <Route path='/user' element={<UserListing/>} />
+          <Route path='/home' element={<Home />} />
+          {/* <Route path='/blog' element={<Blog />} /> */}
+          
+          <Route path='/blogs' element={<BlogListing />} />
+          <Route path='/user-details/:id' element={<UserDetails />} /> 
+>>>>>>> 33c8155 (motre)
 
             <Route path="/blog/:id" element={<BlogViewActivity />} />
           </Routes>
