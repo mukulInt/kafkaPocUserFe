@@ -37,6 +37,7 @@ import {
   FiBell,
   FiChevronDown,
 } from 'react-icons/fi';
+import ArticleOutlinedIcon from '@mui/icons-material/ArticleOutlined';
 import { IconType } from 'react-icons';
 import { ReactText } from 'react';
 import { MoonIcon, SunIcon } from '@chakra-ui/icons';
@@ -49,10 +50,8 @@ import useApiRequest from '../../util/customhook/UseApiRequest';
 // }
 const LinkItems = [
   { name: 'Home', icon: FiHome ,href:"/home"},
-  { name: 'User', icon: FiTrendingUp,href:"/user"},
-  { name: 'Blog', icon: FiCompass,href:"/blog" },
+  { name: 'Blog', icon: ArticleOutlinedIcon,href:"/blog" },
   { name: 'Favourites', icon: FiStar },
-  { name: 'Settings', icon: FiSettings },
 ];
 
 export default function SidebarWithHeader({
