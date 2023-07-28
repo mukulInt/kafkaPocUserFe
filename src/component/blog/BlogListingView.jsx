@@ -118,7 +118,7 @@ export default function GridBlurredBackdrop() {
       }, [data]);
 
 
-      const res = userData?.data
+      const res = userData?.name
 
 
       console.log("testimonials" , {res})
