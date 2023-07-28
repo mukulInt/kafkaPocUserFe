@@ -27,7 +27,7 @@ import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlin
 import FavoriteOutlinedIcon from "@mui/icons-material/FavoriteOutlined";
 
 export default function Blog() {
-  const { data, isLoading, error, fetchData } = useApiRequest(
+  const { data, isLoading, error, fetchData,setData } = useApiRequest(
     "POST",
     getAblogEndPoint
   );
