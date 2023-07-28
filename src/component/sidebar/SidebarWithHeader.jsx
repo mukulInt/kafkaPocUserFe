@@ -44,18 +44,12 @@ import { MoonIcon, SunIcon } from '@chakra-ui/icons';
 import { logoutEndPoint } from '../../common/ApiInfo';
 import useApiRequest from '../../util/customhook/UseApiRequest';
 
-// interface LinkItemProps {
-//   name: string;
-//   icon: IconType;
-// }
+
 const LinkItems = [
   { name: 'Home', icon: FiHome ,href:"/home"},
-// <<<<<<< HEAD
-//   { name: 'Blog', icon: ArticleOutlinedIcon,href:"/blog" },
-// =======
+
   { name: 'User', icon: FiTrendingUp,href:"/user"},
   { name: 'Blog', icon: FiCompass,href:"/blogs" },
-// >>>>>>> 33c8155 (motre)
   { name: 'Favourites', icon: FiStar },
 ];
 

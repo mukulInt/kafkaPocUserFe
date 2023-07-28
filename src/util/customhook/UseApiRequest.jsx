@@ -32,7 +32,7 @@ const useApiRequest = (method, apiUrl) => {
     }
   };
 
-  return { data, isLoading, error,fetchData };
+  return { data, isLoading, error,fetchData ,setData};
 };
 
 export default useApiRequest;
