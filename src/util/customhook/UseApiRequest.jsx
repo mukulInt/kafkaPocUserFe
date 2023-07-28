@@ -10,19 +10,25 @@ const useApiRequest = (method, apiUrl) => {
   //   fetchData();
   // }, []);
 
-  const fetchData = async ( payload = null) => {
+  const fetchData = async ( payload = null, headers = null) => {
     try {
+
+      let config = {};
+      if (headers) {
+        config.headers = headers;
+      }
+
       let response;
       if (method === 'GET') {
-        response = await axios.get(apiUrl);
+        response = await axios.get(apiUrl, config);
       } else if (method === 'POST') {
-        response = await axios.post(apiUrl, payload);
+        response = await axios.post(apiUrl, payload, config);
       }
-      setData(response.data);
-      setIsLoading(false);
+      setData(()=>response.data);
+      setIsLoading(()=>false);
     } catch (error) {
-      setError(error);
-      setIsLoading(false);
+      setError(()=>error);
+      setIsLoading(()=>false);
     }
   };
 

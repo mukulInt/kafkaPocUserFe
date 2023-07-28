@@ -11,6 +11,7 @@ import UserListing from "./component/user/UserListing.jsx";
 
 
 import BlogViewActivity from './component/blog/BlogViewActivity';
+import Login from './component/login/Login';
 
 
 
@@ -27,6 +28,7 @@ function App() {
         <Routes>
           <Route path='/user' element={<UserListing/>} />
           <Route path='/home' element={<Home />} />
+          <Route path='/login' element={<Login />} />
           <Route path='/blog' element={<Blog />} />
 
           <Route path='/user-details/:id' element={<UserDetails />} /> 
