@@ -22,7 +22,7 @@ import {useNavigate } from "react-router-dom";
   ]
 
 function TestimonialCard(props) {
-  const { name, role, content, avatar, index } = props;
+  const { name, role, content, avatar, index,title } = props;
   return (
     <Flex
       boxShadow={'lg'}
@@ -60,6 +60,9 @@ function TestimonialCard(props) {
         backgroundImage: backgrounds[index % 4],
       }}>
       <Flex direction={'column'} textAlign={'left'} justifyContent={'space-between'}>
+      <chakra.span fontFamily={'Inter'} fontWeight={'Bold'} color={'gray.500'} fontSize={"25px"}>
+            {title}
+          </chakra.span>
         <chakra.p fontFamily={'Inter'} fontWeight={'medium'} fontSize={'15px'} pb={4}>
           {content}
         </chakra.p>
@@ -87,7 +90,7 @@ export default function GridBlurredBackdrop() {
 
     const fetchBlogById = (blogId) => {
         console.log('Button clicked for blogId:', blogId);
-        navigate("/blog-details/"+ blogId);
+        navigate("/blog/"+ blogId);
       };
 
     const { data, isLoading, error ,fetchData} = useApiRequest('GET', getAllBlogs);
