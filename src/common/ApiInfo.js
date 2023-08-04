@@ -20,3 +20,5 @@ export const logoutEndPoint = host+port+"/authentication/logout"
 export const getAllBlogs = host+port+"/blog/get-all-blogs"
 export const getAblogEndPoint = host+port+"/blog/get-blog"
 
+export const likeBlogEndPoint = host+port+"/blog/react-blog"
+

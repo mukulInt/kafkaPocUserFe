@@ -25,11 +25,17 @@ import { getAblogEndPoint } from "../../common/ApiInfo";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import FavoriteOutlinedIcon from "@mui/icons-material/FavoriteOutlined";
+import { likeBlogEndPoint } from "../../common/ApiInfo";
 
 export default function Blog() {
   const { data, isLoading, error, fetchData,setData } = useApiRequest(
     "POST",
     getAblogEndPoint
+  );
+
+  const { data:likeData, isLoading:likeIsLoading, error:likeError, fetchData:likeFetchData,setData:likeSetData } = useApiRequest(
+    "POST",
+    likeBlogEndPoint
   );
 
   const [like,setLike]=useState()
@@ -48,9 +54,28 @@ export default function Blog() {
     fetchData(payload, header);
     
   }, []);
+
+  useEffect(()=>{
+    setData(likeData)
+  },[likeData])
   
 
   console.log("blog view ",id)
+
+
+  const likeHandler=()=>{
+  const payload=  {
+      id: id,
+      reacted: true,
+      reactionValue: 1
+    }
+
+    const token = localStorage.getItem("token");
+
+    const header = { Authorization: token };
+
+    likeFetchData(payload, header);
+  }
 
   return (
     <Container maxW={"7xl"}>
@@ -113,10 +138,12 @@ export default function Blog() {
                   { data?.data?.ownReaction === -1 ? (
                     <FavoriteBorderOutlinedIcon
                       style={{ color: "red", cursor: "pointer" }}
+                      onClick={()=>{ likeHandler();  
+                         console.log("blog liked")}}
                     />
                   ) : (
                     <FavoriteOutlinedIcon
-                      style={{ color: "red", cursor: "pointer" }}
+                      style={{ color: "red" }}
                     />
                   )}
                 </Text>{" "}
