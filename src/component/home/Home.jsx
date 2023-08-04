@@ -6,9 +6,9 @@ const Home = () => {
   return (
     <>
     <div>Home</div>
+    {/* <Line></Line>
     <Line></Line>
-    <Line></Line>
-    <SmallCentered></SmallCentered>
+    <SmallCentered></SmallCentered> */}
     </>
   )
 }

@@ -37,9 +37,6 @@ import {
   FiBell,
   FiChevronDown,
 } from 'react-icons/fi';
-import ArticleOutlinedIcon from '@mui/icons-material/ArticleOutlined';
-import { IconType } from 'react-icons';
-import { ReactText } from 'react';
 import { MoonIcon, SunIcon } from '@chakra-ui/icons';
 import { logoutEndPoint } from '../../common/ApiInfo';
 import useApiRequest from '../../util/customhook/UseApiRequest';
@@ -87,9 +84,6 @@ export default function SidebarWithHeader({
   );
 }
 
-// interface SidebarProps extends BoxProps {
-//   onClose: () => void;
-// }
 
 const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
   const navigate = useNavigate();
@@ -175,6 +169,8 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
   }, [data, isDataUpdated]);
 
   const token =  localStorage.getItem("token");
+
+  console.log(" in side bar")
 
   const signoutHandler = async ()=>{
 

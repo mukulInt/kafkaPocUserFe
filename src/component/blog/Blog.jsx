@@ -49,6 +49,9 @@ export default function Blog() {
     
   }, []);
   
+
+  console.log("blog view ",id)
+
   return (
     <Container maxW={"7xl"}>
       <SimpleGrid
